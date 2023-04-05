@@ -198,7 +198,7 @@
   <div class="New-User">
     <h3 class="header">New User</h3>
 
-    <!-- Body of Form starts -->
+  
     <div class="container">
       <form method="post" autocomplete="on">
         <!--Username-->
@@ -279,6 +279,7 @@
 
   </div>
   <script>
+    <!---Filter Bar function----->
     function myFunction() {
       var input, filter, table, tr, td, i, txtValue;
       input = document.getElementById("myInput");
@@ -300,7 +301,10 @@
         }
       }
     }
-
+     <!---Filter Bar function----->
+    
+    
+<!---Hide Disabled Users function----->
     var hideDisabled = document.getElementById("hideDisabled");
     var userTable = document.getElementById("userTable");
 
@@ -322,8 +326,10 @@
         }
       }
     }
+    
+    <!---Hide Disabled Users function----->
 
-
+<!--- Disabled Save User Button function----->
     var userNameField = document.getElementById("userName");
     var displayNameField = document.getElementById("displayName");
     var phoneField = document.getElementById("phone");
@@ -342,8 +348,7 @@
         submitButton.disabled = true;
       }
     }
+    <!--- Disabled Save User Button function----->
   </script>
 </div>
-
-
 </html>
