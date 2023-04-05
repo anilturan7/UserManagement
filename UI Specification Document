@@ -5,7 +5,7 @@ The screen should have the following features:
 A list of all users in the system, including their ID, user name, email, and whether they are enabled or disabled
 The ability to add new users, including assigning user roles
 The ability to enable or disable users
-The ability to search for users by ID, user name, email address or Enable status
+The ability to filter users by ID, user name, email address or Enable status
 
 UI Components
 The User Management Screen should be composed of the following UI components:
@@ -29,13 +29,13 @@ The Enable/Disable User component should be a button or switch that allows admin
 Hide Disabled User
 When The Hide Disabled User checkbox is checked it should hide disabled users in the existing list.
 
-Search Bar
-The Search Bar is a text input that allows administrators to search for users by name or email address.
+Filter Bar
+The Filter Bar is a text input that allows administrators to filter for users by name or email address.
 
 Page Behavior
 When the User Management Screen is first loaded, the User List should be displayed, showing all users in the system. 
 Administrators can add a new user by clicking the "New User" button, which will open the New User Form modal. 
 Administrators can enable or disable a user by clicking the enable/disable button or switch in the User List.
 
-Administrators can search for users by typing ID, user name, email address or Enable status in the Search Bar. 
-The User List should update to show only the users that match the search query.
+Administrators can filter for users by typing ID, user name, email address or Enable status in the Filter Bar. 
+The User List should update to show only the users that match the filter query.
