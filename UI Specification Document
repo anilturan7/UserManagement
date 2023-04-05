@@ -21,7 +21,7 @@ The form should have fields for the user's user name, display name, phone, email
 The user role field should be a dropdown that allows administrators to assign a role to the new user.
 
 Save User
-Save User button should be disable until Administrator filling the new user form then it should be active.
+Save User button should be disable until Administrator filling the new user form then it should be enabled.
 
 Enable/Disable User
 The Enable/Disable User component should be a button or switch that allows administrators to enable or disable a user.
