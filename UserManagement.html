@@ -1,0 +1,349 @@
+<html>
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: 1.7fr 1.8fr 0.1fr;
+    grid-template-rows: 0.2fr 1.1fr 1.8fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "Head Head ."
+      "User-Table New-User ."
+      "User-Table New-User .";
+  }
+
+  .header {
+    background-color: #F5F5F5;
+    height: 50px;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #848492;
+  }
+
+  .button {
+    background-color: #007CBA;
+    color: white;
+  }
+
+  #myButton{
+    float: right;
+  }
+  button:disabled {
+  background-color: #55A7CF;
+  color: #D2E6F0;
+}
+  button:enabled {
+  background-color: #007CBA;
+  color: white;
+}
+
+  * {
+    box-sizing: border-box;
+  }
+
+  #myInput {
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+  }
+
+  .verticalSplit1 {
+    border-left: 1px solid grey;
+    height: 1px;
+    background-color: #007CBA;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif
+  }
+
+  .verticalSplit2 {
+    border-left: 1px solid grey;
+    height: 1px;
+    font-family: Arial, Helvetica, sans-serif
+  }
+
+  .verticalSplit3 {
+    border-left: 1px solid grey;
+    height: 1px;
+    background-color: lightblue;
+    font-family: Arial, Helvetica, sans-serif
+  }
+
+  #userTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+  }
+
+  #userTable th,
+  #userTable td {
+    text-align: left;
+    height: 1px;
+  }
+
+  #userTable tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  #userTable tr.header,
+  #userTable tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  .Head {
+    grid-area: Head;
+    background-color: #F5F5F5;
+  }
+
+  .New-User {
+    grid-area: New-User;
+  }
+
+  .User-Table {
+    grid-area: User-Table;
+  }
+
+  .fl {
+    float: left;
+    width: 110px;
+    line-height: 35px;
+  }
+
+  .fontLabel {
+    color: black;
+  }
+
+  .fr {
+    border: 1px solid gray;
+    float: right;
+  }
+
+  .clr {
+    clear: both;
+  }
+
+  .box {
+    float: right ;
+    width: 360px;
+    height: 35px;
+    margin-top: 10px;
+    font-family: verdana;
+    font-size: 12px;
+  }
+
+  .textBox {
+    float: right ;
+    height: 20px;
+    width: 190px;
+    border: none;
+    padding-left: 20px;
+  }
+
+
+</style>
+
+<div class="container">
+  <div class="Head">
+    <button class="button" type="button">New User</button>
+    <input type="checkbox" id="hideDisabled">
+    <label for="hideDisabled">Hide Disabled User</label>
+    <button id="myButton" type="submit"  disabled>Save User</button>
+
+
+
+
+  </div>
+
+
+  <div class="User-Table">
+
+    <input type="text" id="myInput" onkeyup="myFunction()"
+      placeholder="Filter by ID, User Name, Email or Enabled Status..." title="Type in a name">
+
+    <table id="userTable">
+      <tr class="header">
+        <th class="verticalSplit1" style="width:10%;">ID</th>
+        <th class="verticalSplit1" style="width:30%;">User Name</th>
+        <th class="verticalSplit1" style="width:40%;">Email</th>
+        <th class="verticalSplit1" style="width:20%;">Enabled</th>
+      </tr>
+      <tr>
+        <td class="verticalSplit2">1</td>
+        <td class="verticalSplit2">AdminUser</td>
+        <td class="verticalSplit2">admin@piworks.net</td>
+        <td class="verticalSplit2">true</td>
+      </tr>
+      <tr>
+        <td class="verticalSplit3">2</td>
+        <td class="verticalSplit3">TestUser</td>
+        <td class="verticalSplit3">testuser@piworks.net</td>
+        <td class="verticalSplit3">true</td>
+      </tr>
+      <tr>
+        <td class="verticalSplit2">3</td>
+        <td class="verticalSplit2">TestUser1</td>
+        <td class="verticalSplit2">testuser1@piworks.net</td>
+        <td class="verticalSplit2">false</td>
+      </tr>
+
+    </table>
+
+
+
+  </div>
+
+  <div class="New-User">
+    <h3 class="header">New User</h3>
+
+    <!-- Body of Form starts -->
+    <div class="container">
+      <form method="post" autocomplete="on">
+        <!--Username-->
+        <div class="box">
+          <label for="userName" class="fl fontLabel"> Username: </label>
+
+          <div class="fr">
+            <input type="text" id="userName" class="textBox" autofocus="on" required>
+          </div>
+          <div class="clr"></div>
+        </div>
+        <!--Username-->
+
+
+        <!--Display Name-->
+        <div class="box">
+          <label for="displayName" class="fl fontLabel"> Display Name: </label>
+
+          <div class="fr">
+            <input type="text" id="displayName" class="textBox">
+          </div>
+          <div class="clr"></div>
+        </div>
+        <!--Display Name-->
+
+
+        <!---Phone------>
+        <div class="box">
+          <label for="phone" class="fl fontLabel"> Phone: </label>
+
+          <div class="fr">
+            <input type="text" id="phone" maxlength="10" class="textBox">
+          </div>
+          <div class="clr"></div>
+        </div>
+        <!---Phone---->
+
+
+        <!---Email---->
+        <div class="box">
+          <label for="email" class="fl fontLabel"> Email: </label>
+
+          <div class="fr">
+            <input type="email" id="email" class="textBox">
+          </div>
+          <div class="clr"></div>
+        </div>
+        <!--Email----->
+
+
+        <!---User Roles------>
+        <div class="box">
+          <label for="userRoles" class="fl fontLabel"> User Roles </label>
+
+
+          <select name="userRoles" id="userRoles">
+            <option value="guest">Guest</option>
+            <option value="admin">Admin</option>
+            <option value="superAdmin">SuperAdmin</option>
+          </select>
+          <div class="clr"></div>
+        </div>
+        <!---User Roles---->
+
+        <!---Enabled----->
+        <div class="box radio">
+          <label for="enabled" class="fl fontLabel"> Enabled: </label>
+          <input type="radio" name="Enabled" value="Enabled" required> Enabled &nbsp;
+        </div>
+        <!---Enabled--->
+
+
+
+      </form>
+    </div>
+
+
+
+  </div>
+  <script>
+    function myFunction() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("userTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        td1 = tr[i].getElementsByTagName("td")[1];
+        td2 = tr[i].getElementsByTagName("td")[2];
+        td3 = tr[i].getElementsByTagName("td")[3];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if ((td.innerHTML.toUpperCase().indexOf(filter) > -1) || (td1.innerHTML.toUpperCase().indexOf(filter) > -1) || (td2.innerHTML.toUpperCase().indexOf(filter) > -1) || (td3.innerHTML.toUpperCase().indexOf(filter) > -1)) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+
+    var hideDisabled = document.getElementById("hideDisabled");
+    var userTable = document.getElementById("userTable");
+
+    hideDisabled.addEventListener("change", function () {
+      filterTable();
+    });
+
+    function filterTable() {
+      var rows = userTable.getElementsByTagName("tr");
+      for (var i = 0; i < rows.length; i++) {
+        var cells = rows[i].getElementsByTagName("td");
+        var status = cells[3].textContent.trim();
+        if (status == "false" && hideDisabled.checked) {
+          rows[i].style.display = "none";
+          cells[0].getElementsByTagName("input")[0].disabled = true;
+        } else {
+          rows[i].style.display = "";
+          cells[0].getElementsByTagName("input")[0].disabled = false;
+        }
+      }
+    }
+
+
+    var userNameField = document.getElementById("userName");
+    var displayNameField = document.getElementById("displayName");
+    var phoneField = document.getElementById("phone");
+    var emailField = document.getElementById("email");
+    var submitButton = document.getElementById("myButton");
+
+    userNameField.addEventListener("input", checkForm);
+    displayNameField.addEventListener("input", checkForm);
+    phoneField.addEventListener("input", checkForm);
+    emailField.addEventListener("input", checkForm);
+
+    function checkForm() {
+      if (userNameField.value != "" && emailField.value != "" && displayNameField.value != "" && phoneField.value != "") {
+        submitButton.disabled = false;
+      } else {
+        submitButton.disabled = true;
+      }
+    }
+  </script>
+</div>
+
+
+</html>
